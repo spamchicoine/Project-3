@@ -19,16 +19,13 @@ class MovieList:
         while lower <= upper:
             middle = lower + (upper - lower)//2 # Updates middle index
             if int(self.__list[middle].getID()) == id:   # Checks if middle index matches id searched for
-                self.__steps += 1
                 return self.__list[middle]
             
             elif int(self.__list[middle].getID()) < id: # Adjusts lower bound if item at middle index is less than id searched for
                 lower = middle + 1
-                self.__steps += 1
             
             elif int(self.__list[middle].getID()) > id: # Adjusts upper bound if item at middle index is greater than id searched for
                 upper = middle - 1
-                self.__steps += 1
 
         return 'Movies not found'
     
@@ -41,3 +38,14 @@ class MovieList:
         write = open(filename,'w') # Opens file of filename in write mode
         for i in self.__list:
             write.write(str(i)+'\n') # Writes each list item on each line of the text line
+
+    def recDisplayOrder(self,current):
+        if current is not None:
+            self.recDisplayOrder(current.left)
+            print(current.data,end="")
+            self.recDisplayOrder(current.right)
+
+    def displayInOrder(self):
+        print('display in order %s items'%(self.getSize()))
+        self.recDisplayOrder(self.root)
+        print()
