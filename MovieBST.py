@@ -111,12 +111,7 @@ class MovieBST():
     def extractListInOrder(self,key):
         f1 = open('MovieListTemp.txt','w')
         self.recExtract(self.root,key,f1)
-        f1.close
-        f2 = open('MovieListTemp.txt')
-        print('Print all lines in f2:')
-        for line in f2:
-            print(line)
-        f2.close()
+        f1.close()
         return MovieList.MovieList('MovieListTemp.txt')
 
 moviesbst = MovieBST('Movies.txt')
