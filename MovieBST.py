@@ -102,12 +102,18 @@ class MovieBST():
         print('The BSTree looks like:')
         self.recShow(self.root,"")
 
+    # Recursive auxillary method for extractListInOrder
+    # Input: self, 'current' the current node, 'key' the keyword to search for, and 'file' the file to write all found movies to
+    # Output: writes all movies with key in their title to given file
     def recExtract(self,current,key,file):
         if current is not None:
             self.recExtract(current.left,key,file)
             if key.lower() in [title.lower() for title in current.movie.getTitle().split()]: file.write('%s;%s;%s\n'%(current.movie.getID(),current.movie.getYear(),current.movie.getTitle()))
             self.recExtract(current.right,key,file)
 
+    # Method to return a MovieList of movies with the given key in their title
+    # Input: self and 'key' the keyword to search for
+    # Output: MovieList object containing the movies, also creates 'MovieListTemp.txt' to create the MovieList object
     def extractListInOrder(self,key):
         f1 = open('MovieListTemp.txt','w')
         self.recExtract(self.root,key,f1)
