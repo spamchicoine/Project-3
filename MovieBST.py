@@ -6,6 +6,7 @@ class Node():
         self.movie = movie
         self.left = None
         self.right = None
+        self.index=0
 
     def __str__(self): # Overloads str() so Node returns the movie data
         return str(self.movie)
@@ -37,13 +38,15 @@ class MovieBST():
     def recInsert(self,current,new): # Recursively compares data to insert with left and right nodes
         if new.movie.getID()<current.movie.getID(): # Search left
             if current.left is None:
-                current.left=new # Insert node
+                current.left=new    # Insert node
+                current.left.index = 2*current.index+1
                 self.__size+=1
             else:
                 self.recInsert(current.left,new)
         elif new.movie.getID()>=current.movie.getID(): # Search right
             if current.right is None:
                 current.right=new # Insert node
+                current.right.index = 2*current.index+2
                 self.__size+=1
             else:
                 self.recInsert(current.right,new)
@@ -65,5 +68,37 @@ class MovieBST():
             temp=current # ID found
         return temp
 
+    # Recursive auxillary function for displayInOrder
+    # Input: self and 'current' (the current node)
+    # Output: moves through the tree recursively and prints each movie in the tree
+    def recDisplay(self, current):
+        if current is not None:
+            self.recDisplay(current.left)
+            print(current.movie)
+            self.recDisplay(current.right)
+
+    # Function to display contents of the tree of movies sorted by ID
+    # Input: self
+    # Output: Prints number of items being displayed
+    def displayInOrder(self):
+        print('Display in order %s items by ID'%(self.__size))
+        self.recDisplay(self.root)
+        print()
+
+    # Revursive auxillary method for show
+    # Input: self, 'current' the current node, and 'indentSTR' the string to be printed before the data, creating an indent
+    # Output: moves through tree recursively, printing movie ID and index
+    def recShow(self,current,indentSTR):
+        if current is not None:
+            self.recShow(current.right,indentSTR+"\t")
+            print(indentSTR+str(current.movie.getID())+'(%s)'%(current.index))
+            self.recShow(current.left,indentSTR+"\t")
+
+    # Method to display BSTree
+    # Input: self
+    # Output: prints beginning line and calls recursive auxillary function
+    def show(self):
+        print('The BSTree looks like:')
+        self.recShow(self.root,"")
 
 moviesbst = MovieBST('Movies.txt')
