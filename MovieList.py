@@ -49,3 +49,7 @@ class MovieList:
         print('display in order %s items'%(self.getSize()))
         self.recDisplayOrder(self.root)
         print()
+    
+    def display(self):
+        for item in self.__list:
+            print(item)
