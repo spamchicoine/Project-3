@@ -1,13 +1,27 @@
-11683;1994; The Lion King: Circle of Life: Sing-Along Songs
-12880;1975; The Wind and the Lion
-13079;1994; The Lion King: Special Edition
-13746;2003; The Lion in Winter
-17239;1968; The Lion in Winter
-18771;2004; The Lion King 1 1/2: Bonus Material
-20776;1994; The Lion King: Special Edition: Bonus Material
-23808;2003; Tibet: Cry of the Snow Lion
-24122;1981; Lion of the Desert
-26222;2004; The Lion King 1 1/2
-26342;2003; Teddy Roosevelt: An American Lion
-26660;1998; The Lion King II: Simba's Pride
-27171;1988; The Chronicles of Narnia: The Lion
+11827;1999; A Dog of Flanders
+12986;1992; Man Bites Dog
+13830;1998; Black Dog
+14395;2004; Nine Dog Christmas: The Movie
+14531;2004; The Best of Triumph the Insult Comic Dog
+14897;1961; Nikki: Wild Dog of the North
+15420;2003; Dog Gone
+16636;2004; Dog Training the John Fisher Way
+17134;1995; Far From Home: The Adventures of Yellow Dog
+18328;2002; Dog Soldiers
+18968;1975; A Dog of Flanders
+20089;1999; Soccer Dog
+20230;1997; Wag the Dog
+20386;1995; Top Dog
+20455;1993; To Dance With the White Dog
+20787;1980; Oh! Heavenly Dog
+21266;1993; Mad Dog and Glory
+22339;1999; Dog Park
+23007;1975; Dog Day Afternoon
+23380;1949; Stray Dog
+23987;1996; Mad Dog Time
+25012;2001; Dog Days
+25517;2001; How to Kill Your Neighbor's Dog
+25732;2002; Scooby-Doo! Winter Wonder Dog
+27312;1975; A Boy and His Dog
+27672;2000; My Dog Skip
+27748;2005; Dog the Bounty Hunter: The Best of Season 1

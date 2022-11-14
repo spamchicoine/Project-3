@@ -167,7 +167,7 @@ class MovieBST():
     @staticmethod 
     def plotBST(list):
         index = len(list)
-        while num.log2(index)%2 != 0:
+        while num.log2(index)%1 != 0:
             index += 1
         level = int(num.log2(index))
         tk = Tk()
