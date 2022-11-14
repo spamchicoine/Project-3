@@ -1,15 +1,13 @@
-10235;1996; Unhook the Stars
-11237;1999; The Stars of Star Wars
-12964;1982; The Night of the Shooting Stars
-15887;2000; Banner of the Stars II
-16891;2005; The Man Show Boy / Household Hints from Adult Film Stars
-17250;2000; Banner of the Stars
-18029;2004; Dora the Explorer: Catch the Stars
-19159;2000; Crest of the Stars
-21461;2001; Follow the Stars Home
-21869;2004; The Secret Lives of Adult Stars
-23110;2000; The Book of Stars
-23538;1989; Beyond the Stars
-25227;1999; A Paradise Under the Stars
-26636;1985; My Lucky Stars
-27164;1980; Battle Beyond the Stars
+11683;1994; The Lion King: Circle of Life: Sing-Along Songs
+12880;1975; The Wind and the Lion
+13079;1994; The Lion King: Special Edition
+13746;2003; The Lion in Winter
+17239;1968; The Lion in Winter
+18771;2004; The Lion King 1 1/2: Bonus Material
+20776;1994; The Lion King: Special Edition: Bonus Material
+23808;2003; Tibet: Cry of the Snow Lion
+24122;1981; Lion of the Desert
+26222;2004; The Lion King 1 1/2
+26342;2003; Teddy Roosevelt: An American Lion
+26660;1998; The Lion King II: Simba's Pride
+27171;1988; The Chronicles of Narnia: The Lion

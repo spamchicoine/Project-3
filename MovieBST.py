@@ -1,5 +1,8 @@
 from Movie import *
 import MovieList
+import numpy as num
+import Queue as Q
+from tkinter import *
 
 class Node():
 
@@ -17,6 +20,7 @@ class MovieBST():
     def __init__(self,file):
         self.root = None
         self.__size = 0
+        self.__maxindex = 0
         nodes = open(file)
         for n in nodes: #Inserts the data from each line of the text file as a movie object node
             data = n.split('\n')[0].split(';') # Gets useful data from each text line
@@ -41,6 +45,8 @@ class MovieBST():
             if current.left is None:
                 current.left=new    # Insert node
                 current.left.index = 2*current.index+1
+                if current.left.index > self.__maxindex:
+                    self.__maxindex = current.left.index
                 self.__size+=1
             else:
                 self.recInsert(current.left,new)
@@ -48,6 +54,8 @@ class MovieBST():
             if current.right is None:
                 current.right=new # Insert node
                 current.right.index = 2*current.index+2
+                if current.right.index > self.__maxindex:
+                    self.__maxindex = current.right.index
                 self.__size+=1
             else:
                 self.recInsert(current.right,new)
@@ -119,5 +127,69 @@ class MovieBST():
         self.recExtract(self.root,key,f1)
         f1.close()
         return MovieList.MovieList('MovieListTemp.txt')
+    
+    def getMaxIndex(self):
+        return self.__maxindex
+    
+    def getMaxLevel(self):
+        index = self.__maxindex
+        while num.log2(index)%2 != 0:
+            index += 1
+        return int(num.log2(index))-1
+    
+    # Method to display the movie bst in level order
+    # Input: bst object to display
+    # Output: 
+    def displayLevelOrder(self):
+        list = [None]*(2**(self.getMaxLevel()+1)) # Initialize list of Nones to be our list representation of a bst
+        queque = Q.Queue(self.getMaxIndex()+1) # Initialize our queque
+        root = self.root
+        queque.enqueue(root)
+        while queque.isEmpty() is False: # Iterates through our nodes
+            print(queque.peekFront())
+            front = queque.dequeue() # Pops first node in queque
+            list[front.index]=front # Sets popped node to corrent position in list representation of bst
+            if front.left: # Checks for left child of popped node
+                queque.enqueue(front.left)  
+            if front.right: # Checks for right child of popped node
+                queque.enqueue(front.right)
+        return list
+    
+    @staticmethod 
+    def plotBST(list):
+        index = len(list)
+        while num.log2(index)%2 != 0:
+            index += 1
+        level = int(num.log2(index))
+        tk = Tk()
+        cwidth = (level**2)*30
+        cheight = level*30+25
+        canvas = Canvas(tk,width = cwidth,height = cheight)
+        canvas.pack()
+        clevel = 0
+        index = 0
+        xylist = []
+        for i in range(0,level):
+            clevel += 1
+            x = cwidth/(2**clevel)
+            y = clevel*30
+            for j in range(0,2**(clevel-1)):
+                xylist += [[x,y]]
+                if list[index] is not None:
+                    canvas.create_oval(x-5,y-5,x+5,y+5,fill='blue')
+                    if list[(index-1)//2] is not None:
+                        canvas.create_line(xylist[(index-1)//2][0],xylist[(index-1)//2][1],xylist[index][0],xylist[index][1],fill = 'blue')
+                    else:
+                        canvas.create_line(xylist[(index-1)//2][0],xylist[(index-1)//2][1],xylist[index][0],xylist[index][1],fill = 'gray')
+                else:
+                    canvas.create_oval(x-5,y-5,x+5,y+5,fill='gray')
+                    canvas.create_line(xylist[(index-1)//2][0],xylist[(index-1)//2][1],xylist[index][0],xylist[index][1],fill = 'gray')
+
+                index += 1
+                x += cwidth/(2**(clevel-1))
+        tk.mainloop()
+
+
+
 
 moviesbst = MovieBST('Movies.txt')

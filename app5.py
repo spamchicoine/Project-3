@@ -1,4 +1,5 @@
 from MovieBST import *
+import random
 
 random.seed(7) # initialize the seed for random reproducibility
 
