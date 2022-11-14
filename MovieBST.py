@@ -128,18 +128,24 @@ class MovieBST():
         f1.close()
         return MovieList.MovieList('MovieListTemp.txt')
     
+    # Method to get stored max index
+    # Input: bst object
+    # Output: Max index attribute of input
     def getMaxIndex(self):
         return self.__maxindex
     
+    # Method to return the max level of a bst object
+    # Input: bst object
+    # Output: Returns bst level
     def getMaxLevel(self):
         index = self.__maxindex
-        while num.log2(index)%2 != 0:
+        while num.log2(index)%1 != 0:
             index += 1
         return int(num.log2(index))-1
     
     # Method to display the movie bst in level order
     # Input: bst object to display
-    # Output: 
+    # Output: Prints the objects as it dequeques and return the list representation of the bst
     def displayLevelOrder(self):
         list = [None]*(2**(self.getMaxLevel()+1)) # Initialize list of Nones to be our list representation of a bst
         queque = Q.Queue(self.getMaxIndex()+1) # Initialize our queque
@@ -155,6 +161,9 @@ class MovieBST():
                 queque.enqueue(front.right)
         return list
     
+    # Static method to take a list representation of a bst and turn it into a tree diagram using tkinter
+    # Input: List representation of bst
+    # Output: Tkinter diagram of bst with used nodes colored blue
     @staticmethod 
     def plotBST(list):
         index = len(list)
@@ -169,19 +178,19 @@ class MovieBST():
         clevel = 0
         index = 0
         xylist = []
-        for i in range(0,level):
+        for i in range(0,level): # Iterates through each level of the bst
             clevel += 1
             x = cwidth/(2**clevel)
             y = clevel*30
-            for j in range(0,2**(clevel-1)):
+            for j in range(0,2**(clevel-1)): # Iterates through the nodes at each level
                 xylist += [[x,y]]
-                if list[index] is not None:
+                if list[index] is not None: # Checks if current node is not None, is so node is blue
                     canvas.create_oval(x-5,y-5,x+5,y+5,fill='blue')
-                    if list[(index-1)//2] is not None:
+                    if list[(index-1)//2] is not None: # Checks if parent is not none if so line between is blue
                         canvas.create_line(xylist[(index-1)//2][0],xylist[(index-1)//2][1],xylist[index][0],xylist[index][1],fill = 'blue')
-                    else:
+                    else:   # Else line bewtween is gray
                         canvas.create_line(xylist[(index-1)//2][0],xylist[(index-1)//2][1],xylist[index][0],xylist[index][1],fill = 'gray')
-                else:
+                else: # Else node is gray
                     canvas.create_oval(x-5,y-5,x+5,y+5,fill='gray')
                     canvas.create_line(xylist[(index-1)//2][0],xylist[(index-1)//2][1],xylist[index][0],xylist[index][1],fill = 'gray')
 
