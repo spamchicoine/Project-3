@@ -138,7 +138,7 @@ class MovieBST():
     # Input: bst object
     # Output: Returns bst level
     def getMaxLevel(self):
-        index = self.__maxindex
+        index = self.__maxindex+1
         while num.log2(index)%1 != 0:
             index += 1
         return int(num.log2(index))-1

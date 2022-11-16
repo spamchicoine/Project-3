@@ -1,27 +1,8 @@
-11827;1999; A Dog of Flanders
-12986;1992; Man Bites Dog
-13830;1998; Black Dog
-14395;2004; Nine Dog Christmas: The Movie
-14531;2004; The Best of Triumph the Insult Comic Dog
-14897;1961; Nikki: Wild Dog of the North
-15420;2003; Dog Gone
-16636;2004; Dog Training the John Fisher Way
-17134;1995; Far From Home: The Adventures of Yellow Dog
-18328;2002; Dog Soldiers
-18968;1975; A Dog of Flanders
-20089;1999; Soccer Dog
-20230;1997; Wag the Dog
-20386;1995; Top Dog
-20455;1993; To Dance With the White Dog
-20787;1980; Oh! Heavenly Dog
-21266;1993; Mad Dog and Glory
-22339;1999; Dog Park
-23007;1975; Dog Day Afternoon
-23380;1949; Stray Dog
-23987;1996; Mad Dog Time
-25012;2001; Dog Days
-25517;2001; How to Kill Your Neighbor's Dog
-25732;2002; Scooby-Doo! Winter Wonder Dog
-27312;1975; A Boy and His Dog
-27672;2000; My Dog Skip
-27748;2005; Dog the Bounty Hunter: The Best of Season 1
+10022;2000; Chump Change
+10704;1998; A Change of Heart
+14696;2003; Red Shoe Diaries: Some Things Never Change
+16419;1994; A Change of Place
+18740;1985; Things Change
+22112;1969; Change of Habit
+25403;2005; Balto 3: Wings of Change
+25812;1976; Small Change
