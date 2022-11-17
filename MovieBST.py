@@ -4,6 +4,10 @@ import numpy as num
 import Queue as Q
 from tkinter import *
 
+# Nathan Robinson
+# Sam Chicoine
+
+
 class Node():
 
     def __init__(self,movie):
