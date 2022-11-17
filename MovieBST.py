@@ -30,12 +30,21 @@ class MovieBST():
             data = n.split('\n')[0].split(';') # Gets useful data from each text line
             self.insert(Movie(int(data[0]),int(data[1]),data[2])) # Inserts movie object as a node
     
+    # Method to return size of MovieBST
+    # Input: self
+    # Output: returns self.__size
     def getSize(self):
         return self.__size
 
+    # Method to return if MovieBST is empty
+    # Input: sef
+    # Output: True or False
     def isEmpty(self):
         return self.root is None
     
+    # Method to insert new node using recursice auxillary method
+    # Input: self, 'movie' the movie object to be inserted
+    # Output: sets self.__root to be the new node if BST is empty, otherwise calls auxillary method
     def insert(self,movie): 
         newNode = Node(movie)
         if self.__size == 0: #Corner case if BST is empty
@@ -44,7 +53,10 @@ class MovieBST():
         else:
             self.recInsert(self.root,newNode) # Begins recursive insertion
 
-    def recInsert(self,current,new): # Recursively compares data to insert with left and right nodes
+    # Recursive auxillary method for insert
+    # Input: self, 'current' the current node, and 'new' the node to be inserted
+    # Output: increases self.__size, and adds new node to corresponding index
+    def recInsert(self,current,new): 
         if new.movie.getID()<current.movie.getID(): # Search left
             if current.left is None:
                 current.left=new    # Insert node
@@ -64,13 +76,19 @@ class MovieBST():
             else:
                 self.recInsert(current.right,new)
 
-    def search(self,id): # Searches BST for given ID
+    # Method to search MovieBST for given ID using auxillary recursive method
+    # Input: self, and 'id' the ID to search for
+    # Output: returns the node of movie with given ID, or none
+    def search(self,id):
         if self.isEmpty(): # Corner case if BST is empty
             return None
         else:
             node=self.recSearch(self.root,id) # Starts recursive searching
         return node
     
+    # Recursive auxillary method for search
+    # Input: self, 'current' the current node, and 'id' the ID to search for
+    # Output: returns the node of the movie with given ID, or none if not found
     def recSearch(self,current,id):
         if current is None: return None # ID not found and reached end of BST
         if id<current.movie.getID(): # Searches left subtree if ID is smaller than current
